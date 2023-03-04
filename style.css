@@ -1,0 +1,112 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap');
+/*RESET */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Jakarta' , sans-serif;
+}
+
+/*DECLARING VARIABLES*/
+:root {
+    --BACKGROUND-COLOR : hsl(0, 0%, 100%);
+    --UNREAD-NOTIFICATION-COLOR : hsl(211, 68%, 94%);
+    --NOTIFICATION-COUNT-BACKGROUND-COLOR : hsl(219, 85%, 26%);
+    --NOTIFICATION-COUNT-COLOR : WHITE;
+    --CHESS-CLUB-COLOR : hsl(219, 85%, 26%);
+    --TIME-TEXT-COLOR : rgba(123, 123, 123, 0.683);
+    --NORMAL-TEXT-COLOR : rgb(82, 80, 80);
+    --NAME-COLOR : BLACK;
+}
+
+/*UTILITY CLASSES*/
+
+.unread {
+    background-color: var(--UNREAD-NOTIFICATION-COLOR);
+    padding: 5px;
+}
+.unread .time::after {
+    content: "🔴";
+    font-size: 0.5rem;
+}
+
+/*STYLING */
+
+header  { 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    
+}
+body {
+    width: 100%;
+    color: var(--NORMAL-TEXT-COLOR);
+}
+
+.notification-image {
+    justify-self: start;
+    
+    width : 50px;
+    margin : 0px 1rem;
+    grid-area: nimg;
+   
+    grid-column: 1/2;
+}
+.notification {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "nimg" ,"ncontent";
+    margin: 1rem;
+}
+.notification-content {
+    grid-area: ncontent;
+    grid-column: 2/3;
+}
+
+.message {
+    max-width: fit-content;
+    border: 1px solid black;
+    
+}
+
+.name {
+    color: var(--NAME-COLOR);
+}
+.time {
+    color: var(--TIME-TEXT-COLOR);
+}
+.chess-club {
+    color: var(--CHESS-CLUB-COLOR);
+}
+h1 {
+    color: black
+}
+#unread-notification-number {
+    background-color: var(--NOTIFICATION-COUNT-BACKGROUND-COLOR);
+    color: var(--NOTIFICATION-COUNT-COLOR);
+    display: inline-block;
+    width: 2rem;
+    text-align: center;
+}
+#container {
+    max-width: 700px;
+    margin: auto;
+}
+#mark-all-as-read-btn {
+    background: none;
+    border : none;
+    color : var(--NOTIFICATION-COUNT-BACKGROUND-COLOR);
+    
+}
+
+
+.chess-image {
+    position: relative;
+    left: 80%;
+}
